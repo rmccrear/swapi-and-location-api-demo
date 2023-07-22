@@ -2,7 +2,8 @@
 import { Component } from 'react';
 import axios from 'axios';
 
-const location_IQ_API_KEY = "pk.396757b389f5edb1ab8bee91a1e5741e";
+const location_IQ_API_KEY = import.meta.env.VITE_APP_location_IQ_API_KEY;
+console.log(location_IQ_API_KEY);
 
 // create App Component
 class App extends Component {
