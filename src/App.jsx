@@ -2,8 +2,8 @@
 import { Component } from 'react';
 import axios from 'axios';
 
-const location_IQ_API_KEY = import.meta.env.VITE_APP_LOCATION_IQ_API_KEY;
-console.log(location_IQ_API_KEY);
+const LOCATION_IQ_API_KEY = import.meta.env.VITE_LOCATION_IQ_API_KEY;
+console.log(LOCATION_IQ_API_KEY);
 
 // create App Component
 class App extends Component {
@@ -18,7 +18,7 @@ class App extends Component {
 
   handleGetNashville = async () => {
     console.log("click");
-    let result = await axios.get(`https://us1.locationiq.com/v1/search?key=${location_IQ_API_KEY}&q=nashville&format=json`);
+    let result = await axios.get(`https://us1.locationiq.com/v1/search?key=${LOCATION_IQ_API_KEY}&q=nashville&format=json`);
     let data = result.data;
     console.log(data);
     this.setState({
@@ -31,7 +31,7 @@ class App extends Component {
 
   handleGetFortLauderdale = async () => {
     console.log("click");
-    let result = await axios.get(`https://us1.locationiq.com/v1/search?key=${location_IQ_API_KEY}&q=fort%20lauderdale&format=json`)
+    let result = await axios.get(`https://us1.locationiq.com/v1/search?key=${LOCATION_IQ_API_KEY}&q=fort%20lauderdale&format=json`)
       let data = result.data;
     console.log(data);
     this.setState({
@@ -68,7 +68,7 @@ class App extends Component {
 
   handleGetNewOrleans = async () => {
     console.log('click');
-    let result = await axios.get(`https://us1.locationiq.com/v1/search?key=${location_IQ_API_KEY}&q=new%20orleans&format=json`)
+    let result = await axios.get(`https://us1.locationiq.com/v1/search?key=${LOCATION_IQ_API_KEY}&q=new%20orleans&format=json`)
     console.log(result)
     let data = result.data;
     this.setState({
@@ -81,7 +81,7 @@ class App extends Component {
 
 
   handleGetBirmingham = async () => {
-    let result = await axios.get(`https://us1.locationiq.com/v1/search?key=${location_IQ_API_KEY}&q=birmingham&format=json`)
+    let result = await axios.get(`https://us1.locationiq.com/v1/search?key=${LOCATION_IQ_API_KEY}&q=birmingham&format=json`)
     console.log(result)
     let data = result.data;
     this.setState({
@@ -107,7 +107,7 @@ class App extends Component {
         <h3> {this.state.cityDisplayName} </h3>
         <p> latitude {this.state.cityLat} </p>
         <p> longitude: {this.state.cityLon} </p>
-        <img src={`https://maps.locationiq.com/v3/staticmap?key=${location_IQ_API_KEY}&center=${this.state.cityLat},${this.state.cityLon}&zoom=18`} />
+        <img src={`https://maps.locationiq.com/v3/staticmap?key=${LOCATION_IQ_API_KEY}&center=${this.state.cityLat},${this.state.cityLon}&zoom=18`} />
         <button onClick={this.handleGetCity} >get City Data</button>
 
 
